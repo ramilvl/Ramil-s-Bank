@@ -14,7 +14,7 @@ public class Dialogs {
     }
     public static int onayMesajiGoster(JFrame frame, String message){
         int optionType = JOptionPane.YES_NO_OPTION;
-        int selected = JOptionPane.showConfirmDialog(frame, message, "UYARI", optionType);
+        int selected = JOptionPane.showConfirmDialog(frame, message, "Xəbərdarlıq", optionType);
         if(optionType == selected){
             return 1;
         }

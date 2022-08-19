@@ -27,9 +27,9 @@ public class DbConnection {
         }
         try {
             this.connection=DriverManager.getConnection(url,this.USER, this.PASSWORD);
-            System.out.println("Baglanti Basarili");
+            System.out.println("Bağlantı Uğurlu");
         } catch (SQLException ex) {
-            System.out.println("Baglanti Basarisiz");
+            System.out.println("Bağlantı uğursuz oldu");
             Logger.getLogger(DbConnection.class.getName()).log(Level.SEVERE, null, ex);
         }
         

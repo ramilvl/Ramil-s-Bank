@@ -26,7 +26,7 @@ public class OdemelerEkrani extends javax.swing.JFrame implements IDuzenleyici,I
     public void getEdits() {
         this.setLocationRelativeTo(null);
         odemelerEkraniPanel.setFocusable(true);
-        this.kullaniciAdiSoyadiLabel.setText("Hormetli "+getHesapBilgileri().getAdSoyad());
+        this.kullaniciAdiSoyadiLabel.setText("Hörmətli "+getHesapBilgileri().getAdSoyad());
         this.elektrikBorcu.setText(String.valueOf(getHesapBilgileri().getElektrikFaturasi()));
         this.suBorcu.setText(String.valueOf(getHesapBilgileri().getSuFaturasi()));
         this.dogalgazBorcu.setText(String.valueOf(getHesapBilgileri().getDogalgazFaturasi()));
@@ -334,7 +334,7 @@ public class OdemelerEkrani extends javax.swing.JFrame implements IDuzenleyici,I
     private void elektrikOdeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_elektrikOdeButtonActionPerformed
         double elektrikTutari=Double.valueOf(this.elektrikBorcu.getText());
         if(this.faturaOncedenOdenmisMi(elektrikTutari)){
-            Dialogs.ozelMesajGoster(this, "Elektrik Faturasi Zaten Odenmisdir!");
+            Dialogs.ozelMesajGoster(this, "Elektrik borcu artıq ödənilib!");
         }else{
             this.faturayiOde("elektrik", elektrikTutari);
         }
@@ -343,7 +343,7 @@ public class OdemelerEkrani extends javax.swing.JFrame implements IDuzenleyici,I
     private void suOdeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suOdeButtonActionPerformed
         double suTutari=Double.valueOf(this.suBorcu.getText());
         if(this.faturaOncedenOdenmisMi(suTutari)){
-            Dialogs.ozelMesajGoster(this, "Su Faturasi Zaten Odenmisdir!");
+            Dialogs.ozelMesajGoster(this, "Su borcu artıq ödənilib!");
         }else{
             this.faturayiOde("su", suTutari);
         }
@@ -352,7 +352,7 @@ public class OdemelerEkrani extends javax.swing.JFrame implements IDuzenleyici,I
     private void dogalgazOdeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dogalgazOdeButtonActionPerformed
         double dogalgazTutari=Double.valueOf(this.dogalgazBorcu.getText());
         if(this.faturaOncedenOdenmisMi(dogalgazTutari)){
-            Dialogs.ozelMesajGoster(this, "Dogalgaz Faturasi Zaten Odenmisdir!");
+            Dialogs.ozelMesajGoster(this, "Təbii qaz borcu artıq ödənilib!");
         }else{
             this.faturayiOde("dogalgaz", dogalgazTutari);
         }
@@ -361,7 +361,7 @@ public class OdemelerEkrani extends javax.swing.JFrame implements IDuzenleyici,I
     private void internetOdeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_internetOdeButtonActionPerformed
         double internetTutari=Double.valueOf(this.internetBorcu.getText());
         if(this.faturaOncedenOdenmisMi(internetTutari)){
-            Dialogs.ozelMesajGoster(this, "Internet Faturasi Zaten Odenmisdir!");
+            Dialogs.ozelMesajGoster(this, "İnternet borcu artıq ödənilmişdir!");
         }else{
             this.faturayiOde("internet", internetTutari);
         }
@@ -376,10 +376,10 @@ public class OdemelerEkrani extends javax.swing.JFrame implements IDuzenleyici,I
         this.getFaturaOdemeleriObject().setFaturaTutari(faturaTutari);
         
         if(getFaturaOdemeleriObject().faturaOdendiMi()){
-            Dialogs.ozelMesajGoster(this, "Faturazniz basariyla odenmisdir.");
+            Dialogs.ozelMesajGoster(this, "Borcunuz uğurla ödənildi.");
             ActionAyarlari.setVisible(this,new HesapEkrani());
         }else{
-            Dialogs.ozelMesajGoster(this, "Odeleme islemi gerceklesmedi!");
+            Dialogs.ozelMesajGoster(this, "Ödəniş prosesi uğursuz oldu!");
         }
         
     }

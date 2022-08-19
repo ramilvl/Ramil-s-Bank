@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package gui;
 
 import database.IBilgiController;
@@ -13,10 +9,7 @@ import gui.ayarlar.IDuzenleyici;
 import gui.ayarlar.TextAyarlari;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author ASUS
- */
+
 public class ParaCekmeEkrani extends javax.swing.JFrame implements IDuzenleyici,IBilgiController {
 
     private ParaCekme paraCekmeObject=null;
@@ -34,7 +27,7 @@ public class ParaCekmeEkrani extends javax.swing.JFrame implements IDuzenleyici,
         paraCekmeEkraniPanel.setFocusable(true);
         TextAyarlari.setOnlyNumber(cekilecekMiktarText);
         TextAyarlari.setMaxLimit(cekilecekMiktarText,4);
-        this.kullaniciAdiSoyadiLabel.setText("Sayin "+this.getHesapBilgileri().getAdSoyad());
+        this.kullaniciAdiSoyadiLabel.setText("Hörmətli "+this.getHesapBilgileri().getAdSoyad());
         this.bakiyeLabel.setText(String.valueOf(this.getHesapBilgileri().getBakiye()));
     }
 
@@ -55,7 +48,6 @@ public class ParaCekmeEkrani extends javax.swing.JFrame implements IDuzenleyici,
         return paraCekmeObject;
     }
 
-    
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -226,11 +218,11 @@ public class ParaCekmeEkrani extends javax.swing.JFrame implements IDuzenleyici,
     private void paraCek(){
         this.getParaCekmeObject().setCekilecekMiktar(cekilecekMiktar);
         if(getParaCekmeObject().paraCekildiMi()){
-            Dialogs.ozelMesajGoster(this, "Para cekme islemi tamamlandi. \n"
-                    +"Cekilen miktar:"+this.cekilecekMiktar+" TL");
+            Dialogs.ozelMesajGoster(this, "Çıxarma tamamlandı. \n"
+                    +"Çıxarılan məbləğ:"+this.cekilecekMiktar+" TL");
             ActionAyarlari.setVisible(this, new HesapEkrani());
         }else{
-            Dialogs.ozelMesajGoster(this, "Bakiyeniz yeterli degil");
+            Dialogs.ozelMesajGoster(this, "Balansınız kifayət deyil");
         }
     }
     

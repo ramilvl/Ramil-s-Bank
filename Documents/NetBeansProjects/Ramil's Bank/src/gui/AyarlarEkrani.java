@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package gui;
 
 import database.IBilgiController;
@@ -14,10 +10,7 @@ import gui.ayarlar.IconAyarlari;
 import gui.ayarlar.TextAyarlari;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author ASUS
- */
+
 public class AyarlarEkrani extends javax.swing.JFrame implements IDuzenleyici,IBilgiController {
     private TelNoYenileme telNoYenilemeObject=null;
     private String eskiTelNo=null;
@@ -36,7 +29,7 @@ public class AyarlarEkrani extends javax.swing.JFrame implements IDuzenleyici,IB
         TextAyarlari.setMaxLimit(telNoText, 11);
         this.telNoText.setText(getHesapBilgileri().getTelNo());
         this.eskiTelNo=telNoText.getText();
-        this.kullaniciAdiSoyadiLabel.setText("Hormetli "+getHesapBilgileri().getAdSoyad());
+        this.kullaniciAdiSoyadiLabel.setText("Hörmətli "+getHesapBilgileri().getAdSoyad());
     }
 
     @Override
@@ -224,9 +217,9 @@ public class AyarlarEkrani extends javax.swing.JFrame implements IDuzenleyici,IB
             String yeniTelNo=this.telNoText.getText().trim();
             getTelNoYenilemeObject().setTelNo(yeniTelNo);
             if(getTelNoYenilemeObject().telNoYenilendiMi()) {
-                Dialogs.ozelMesajGoster(this, "Telefon nomresi "+yeniTelNo+ " olarak guncellenmistir.");
+                Dialogs.ozelMesajGoster(this, "Telefon nömrəsi "+yeniTelNo+ " olaraq güncəllənmişdir.");
             }else{
-                Dialogs.ozelMesajGoster(this, "Basarisiz. Bilgileri kontrol edin!");
+                Dialogs.ozelMesajGoster(this, "Uğursuz. Məlumatları yenidən yoxlayın! ");
                 this.telNoText.setText(this.eskiTelNo);
             }
         }else{

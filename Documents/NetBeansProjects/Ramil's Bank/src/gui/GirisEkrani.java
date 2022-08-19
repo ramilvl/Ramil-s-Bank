@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package gui;
 
 import database.DbConnection;
@@ -18,10 +14,8 @@ import javax.swing.JButton;
 
 
 public final class GirisEkrani extends javax.swing.JFrame implements IDuzenleyici,IBilgiController {
-
     
     private KullaniciGiris kullaniciGirisObject=null;
-    
     
     private final String KIMLIK_TEXT_ORIGINAL="Ş.V.No / Müştəri No";
     private final String SIFRE_TEXT_ORIGINAL="********";
@@ -52,8 +46,6 @@ public final class GirisEkrani extends javax.swing.JFrame implements IDuzenleyic
         return kullaniciGirisObject;
     }
 
-    
-    
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -232,7 +224,6 @@ public final class GirisEkrani extends javax.swing.JFrame implements IDuzenleyic
     }//GEN-LAST:event_girisButtonMouseExited
 
     private void basvurButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_basvurButtonMouseEntered
-
         ButtonAyarlari.setBgFg(basvurButton, Color.MAGENTA,Color.green);
     }//GEN-LAST:event_basvurButtonMouseEntered
 
@@ -275,8 +266,8 @@ public final class GirisEkrani extends javax.swing.JFrame implements IDuzenleyic
         if(getKullaniciGirisObject().girisBilgileriDogruMu()){
             ActionAyarlari.setVisible(this,new HesapEkrani());
         }else{
-            Dialogs.ozelMesajGoster(this,"Giris bilgileri dogru degildir!\n"
-                    + "+Lutfen Bilgilerinizi kontrol edin!");
+            Dialogs.ozelMesajGoster(this,"Giriş məlumatları düzgün deyil!\n"
+                    + "Zəhmət olmasa məlumatı yenidən yoxlayın!");
         }
     }
     
@@ -290,10 +281,7 @@ public final class GirisEkrani extends javax.swing.JFrame implements IDuzenleyic
         
     }//GEN-LAST:event_sifremiUnuttumLabelMouseClicked
         
-       
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

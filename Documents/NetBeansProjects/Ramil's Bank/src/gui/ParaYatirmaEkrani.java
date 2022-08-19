@@ -1,4 +1,3 @@
-
 package gui;
 
 import database.IBilgiController;
@@ -209,11 +208,11 @@ public class ParaYatirmaEkrani extends javax.swing.JFrame implements IDuzenleyic
     private void paraYatir(){
         this.getParaYatirmaObject().setYatiralacakMiktar(this.yatirilacakMiktar);
         if(getParaYatirmaObject().paraYatirildiMi()){
-            Dialogs.ozelMesajGoster(this, "Para Basariyla Hesapiniza Taninlanmisdir. \n"
-                    + "Yatirilan Miktar:"+this.yatirilacakMiktar + "Tl");
+            Dialogs.ozelMesajGoster(this, "Pul Hesabınıza Uğurla Yatırıldı. \n"
+                    + "Depozit məbləği:"+this.yatirilacakMiktar + "AZN");
             ActionAyarlari.setVisible(this, new HesapEkrani());
         }else{
-            Dialogs.ozelMesajGoster(this, "Bilgilerinizi Kontrol Edin!");
+            Dialogs.ozelMesajGoster(this, "Məlumatlarınızı Yoxlayın!");
         }
     }
     
@@ -221,9 +220,7 @@ public class ParaYatirmaEkrani extends javax.swing.JFrame implements IDuzenleyic
         ActionAyarlari.setVisible(this,new HesapEkrani());
     }//GEN-LAST:event_geriIconMouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

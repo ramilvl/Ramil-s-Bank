@@ -1,4 +1,3 @@
-
 package gui;
 
 import database.IBilgiController;
@@ -32,7 +31,7 @@ public class HavaleEkrani extends javax.swing.JFrame implements IDuzenleyici,IBi
        TextAyarlari.setMaxLimit(gonderilecekMiktarText,5);
        TextAyarlari.setOnlyNumber(musteriNoText);
        musteriNoText.setText(MUSTERI_NO_TEXT_ORIGINAL);
-       this.kullaniciAdiSoyadiLabel.setText("Sayin "+getHesapBilgileri().getAdSoyad());
+       this.kullaniciAdiSoyadiLabel.setText("Hörmətli "+getHesapBilgileri().getAdSoyad());
        this.bakiyeLabel.setText(String.valueOf(getHesapBilgileri().getBakiye()));
     }
 
@@ -250,13 +249,13 @@ public class HavaleEkrani extends javax.swing.JFrame implements IDuzenleyici,IBi
         getHavaleObject().setHavaleAlacakKisi(this.musteriNoText.getText());
         
         if(getHavaleObject().havaleYapildiMi()){
-            Dialogs.ozelMesajGoster(this,"Havale Islemi Basariyla Gerceklesmisdir. \n"
-                    + "Gonderilen msuteri numarasi:"+this.musteriNoText.getText()
-                    +"\n Gonderilen Miktar:"+this.gonderilecekMiktar+" TL");
+            Dialogs.ozelMesajGoster(this,"Köçürmə əməliyyatı uğurlu oldu. \n"
+                    + "Göndərilən müştəri nömrəsi:"+this.musteriNoText.getText()
+                    +"\n Göndərilən Məbləğ:"+this.gonderilecekMiktar+" AZN");
             ActionAyarlari.setVisible(this, new HesapEkrani());
         }else{
-            Dialogs.ozelMesajGoster(this,"Havale Islemi Gerceklesmedi.\n"
-                    + "Lutfen bilgilerinizi kontrol edin!");
+            Dialogs.ozelMesajGoster(this,"Köçürmə əməliyyatı alınmadı.\n"
+                    + "Zəhmət olmasa məlumatlarınızı yoxlayın!");
         }
         
     }
@@ -277,9 +276,7 @@ public class HavaleEkrani extends javax.swing.JFrame implements IDuzenleyici,IBi
         TextAyarlari.checkTheTextFocusLost(musteriNoText);
     }                                       
 
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

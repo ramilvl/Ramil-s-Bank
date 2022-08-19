@@ -1,4 +1,3 @@
-
 package gui.ayarlar;
 
 public interface IDuzenleyici {

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package gui;
 
 import database.IBilgiController;
@@ -15,10 +11,7 @@ import gui.ayarlar.TextAyarlari;
 import java.awt.Color;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author ASUS
- */
+
 public class BasvuruEkrani extends javax.swing.JFrame implements IDuzenleyici,IBilgiController {
     
     private KullaniciBasvuru kullaniciBasvuruObject=null;
@@ -29,7 +22,6 @@ public class BasvuruEkrani extends javax.swing.JFrame implements IDuzenleyici,IB
         
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -241,8 +233,6 @@ public class BasvuruEkrani extends javax.swing.JFrame implements IDuzenleyici,IB
     }
     
     
-    
-    
     private void basvurButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_basvurButtonActionPerformed
         if(this.bilgilerGecerlimi()){
             this.basvuruyuGerceklestir();
@@ -256,8 +246,8 @@ public class BasvuruEkrani extends javax.swing.JFrame implements IDuzenleyici,IB
     private void basvuruyuGerceklestir(){
         
         this.getKullaniciBasvuruObject().setAdSoyad(this.adSoyadText.getText().trim());
-        this.getKullaniciBasvuruObject().setTcNo(this.tcNoText.getText().trim());
-        this.getKullaniciBasvuruObject().setTelNo(this.telNoText.getText().trim());
+        this.getKullaniciBasvuruObject().setTcNo(this.tcNoText.getText());
+        this.getKullaniciBasvuruObject().setTelNo(this.telNoText.getText());
         
         this.getKullaniciBasvuruObject().setGuvenlikSorusu(String.valueOf(this.guvenlikSorusu.getSelectedItem()));
         this.getKullaniciBasvuruObject().setGuvenlikCevap(this.guvenlikCevapText.getText().trim());
@@ -266,13 +256,13 @@ public class BasvuruEkrani extends javax.swing.JFrame implements IDuzenleyici,IB
         this.getKullaniciBasvuruObject().setSifre(this.randomSifreAl());
         
         if(this.getKullaniciBasvuruObject().basvuruOnaylandiMi()){
-            Dialogs.ozelMesajGoster(this,"Qeydiyyatınız ugurla qeydə alınmışdır.\n"
-                    + " MÜştəri nömrəniz:"+this.getKullaniciBasvuruObject().getMusteriNo()
+            Dialogs.ozelMesajGoster(this,"Qeydiyyatınız uğurla qeydə alınmışdır.\n"
+                    + "Müştəri Nömrəniz:"+this.getKullaniciBasvuruObject().getMusteriNo()
                     + "\nŞifrəniz:"+this.getKullaniciBasvuruObject().getSifre());
             ActionAyarlari.setVisible(this,new GirisEkrani());
         }else{
             Dialogs.ozelMesajGoster(this,"Qeydiyyatınız qeydə alınmamışdır.\n"
-                    +"Zəhmət olmasa məlumatları yoxlayın!");
+                    +"Zəhmət olmasa məlumatları yenidən yoxlayın!");
         }
         
     }

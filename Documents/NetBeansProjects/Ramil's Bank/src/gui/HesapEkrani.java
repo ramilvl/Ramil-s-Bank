@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package gui;
 
 import database.IBilgiController;
@@ -16,19 +12,12 @@ import java.awt.Component;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
-/**
- *
- * @author ASUS
- */
+
 public class HesapEkrani extends javax.swing.JFrame implements IDuzenleyici,IBilgiController {
 
-    /**
-     * Creates new form HesapEkrani
-     */
     public HesapEkrani() {
         initComponents();
         getEdits();
-        
     }
 
     @Override
@@ -275,8 +264,8 @@ public class HesapEkrani extends javax.swing.JFrame implements IDuzenleyici,IBil
     }//GEN-LAST:event_odemelerButtonActionPerformed
 
     private void logoutIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutIconMouseClicked
-        String question = "Hesapinizdan cikis yapilacaktir\n"
-                + "Onayliyormusunuz?";
+        String question = "Hesabınız sistemdən çıxacaq.\n"
+                + "Təsdiq edirsiniz?";
         if(Dialogs.onayMesajiGoster(this, question)==1){
             this.cikisYap();
         }

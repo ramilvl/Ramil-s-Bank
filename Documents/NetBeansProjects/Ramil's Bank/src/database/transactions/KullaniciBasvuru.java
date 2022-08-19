@@ -33,7 +33,7 @@ public class KullaniciBasvuru extends DbConnection implements IBilgiController {
         try {
             super.statement=super.connection.createStatement();
             ResultSet rs = statement.executeQuery(query);
-            while(rs.next()){
+            while(rs.next()) {
                 return true;
             }
         } catch (SQLException ex) {
@@ -43,8 +43,8 @@ public class KullaniciBasvuru extends DbConnection implements IBilgiController {
     }
     
     private void basvuruyuOnayla(){
-        String query = "INSERT INTO kullanicilar(musteri_no,sifre,"
-                + "ad_soyad,tc_no,tel_no,guvenlik_sorusu,guvenlik_cevap)"
+        String query = "INSERT INTO kullanicilar ( musteri_no,sifre,"
+                + "ad_soyad,tc_no,tel_no,guvenlik_sorusu,guvenlik_cevap )"
                 + " VALUES("
                 + "'" + this.musteriNo + "',"
                 + "'" + this.sifre + "',"

@@ -1,4 +1,3 @@
-
 package gui;
 
 import database.IBilgiController;
@@ -13,10 +12,7 @@ import java.awt.Color;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 
-/**
- *
- * @author ASUS
- */
+
 public class SifreYenilemeEkrani extends javax.swing.JFrame implements IDuzenleyici,IBilgiController {
 
     private SifreYenileme sifreYenilemeObject=null;
@@ -289,7 +285,7 @@ public class SifreYenilemeEkrani extends javax.swing.JFrame implements IDuzenley
         if(yeniSifre.equals(yeniSifreTekrar)){
             this.sifreyiOnayla();
         }else{
-            Dialogs.ozelMesajGoster(this, "Sifreler uyusmuyor!");
+            Dialogs.ozelMesajGoster(this, "Parollar uyğun gəlmir!");
         }
     }
     
@@ -302,15 +298,15 @@ public class SifreYenilemeEkrani extends javax.swing.JFrame implements IDuzenley
         }
         this.getSifreYenilemeObject().setYeniSifre(String.valueOf(this.yeniSifreText.getPassword()));
         if(this.getSifreYenilemeObject().sifreYenilendiMi()){
-            Dialogs.ozelMesajGoster(this, "Sifreniz Basariyla Yenilenmisdir.");
+            Dialogs.ozelMesajGoster(this, "Parolunuz uğurla bərpa olundu.");
             if(this.isEnabledEskiSifreText()){
                 ActionAyarlari.setVisible(this, new HesapEkrani());
             }else{
                 ActionAyarlari.setVisible(this, new GirisEkrani());
             }
         }else{
-                Dialogs.ozelMesajGoster(this, "Sifreniz yenilenemedi \n"
-                + "Lutfen Bilgilerinizi Kontrol Edin!");
+                Dialogs.ozelMesajGoster(this, "Parolu sıfırlamaq mümkün olmadı \n"
+                + "Zəhmət olmasa məlumatlarınızı yenidən yoxlayın!");
         }
     }
     
